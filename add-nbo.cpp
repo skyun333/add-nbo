@@ -5,6 +5,11 @@
 #include<netinet/in.h>
 
 int main(int argc, char **argv){
+    if(argc<=2){
+	    printf("syntax error\n");
+	    printf("sample : ./add-nbo a.bin c.bin\n");
+    }
+
     uint32_t buffer1, buffer2;
     FILE *f1, *f2;
 
@@ -16,7 +21,7 @@ int main(int argc, char **argv){
 
     buffer1=ntohl(buffer1);
     buffer2=ntohl(buffer2);
-    int sum=buffer1+buffer2;
+    uint32_t sum=buffer1+buffer2;
 
     printf("%d(0x%x) + %d(0x%x) = %d(0x%x)",buffer1,buffer1,buffer2,buffer2,sum,sum);
 }
