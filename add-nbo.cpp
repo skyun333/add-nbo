@@ -17,6 +17,7 @@ int main(int argc, char **argv){
     f2=fopen(argv[2],"r");
 
     int num1=fread(&buffer1,sizeof(uint32_t),1,f1);
+	//두 번째 인자에 1, 세 번재 인자에 4를 주면 4가 리턴됨.
     int num2=fread(&buffer2,sizeof(uint32_t),1,f2);
 
     buffer1=ntohl(buffer1);
